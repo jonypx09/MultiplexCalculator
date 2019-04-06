@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:title="Calculator"
+            android:id="@+id/calculator_title">
+            <menu>
+                <item
+                    android:id="@+id/nav_basic_calculator"
+                    android:icon="@drawable/calculator_basic"
+                    android:title="Basic"
+                    android:checkable="true"/>
+                <item
+                    android:id="@+id/nav_scientific_calculator"
+                    android:icon="@drawable/calculator"
+                    android:title="Scientific"
+                    android:checkable="true"/>
+            </menu>
+        </item>
+
+        <item android:title="Converter"
+            android:id="@+id/converters_title">
+            <menu>
+                <!--<item-->
+                    <!--android:id="@+id/nav_currency"-->
+                    <!--android:icon="@drawable/currency_usd"-->
+                    <!--android:title="Currency"-->
+                    <!--android:checkable="true"/>-->
+
+                <item
+                    android:id="@+id/nav_length"
+                    android:icon="@drawable/ruler"
+                    android:title="Length"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/nav_weight"
+                    android:icon="@drawable/weight"
+                    android:title="Weight and Mass"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/nav_volume"
+                    android:icon="@drawable/volume"
+                    android:title="Volume"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/nav_area"
+                    android:icon="@drawable/area"
+                    android:title="Area"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/nav_temp"
+                    android:icon="@drawable/thermometer"
+                    android:title="Temperature"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/nav_pressure"
+                    android:icon="@drawable/pressure"
+                    android:title="Pressure"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/nav_speed"
+                    android:icon="@drawable/speedometer"
+                    android:title="Speed"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/nav_power"
+                    android:icon="@drawable/flash_circle"
+                    android:title="Power"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/nav_fuel"
+                    android:icon="@drawable/gas_station"
+                    android:title="Fuel Consumption"
+                    android:checkable="true"/>
+            </menu>
+        </item>
+    </group>
+
+    <item android:title="Configure"
+        android:id="@+id/configure_title">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/settings"
+                android:title="Settings" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Rate and Share"
+                />
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/message_alert"
+                android:title="Send Feedback" />
+        </menu>
+    </item>
+
+</menu>

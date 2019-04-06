@@ -1,0 +1,79 @@
+<resources>
+
+    <style name="AppTheme.NoActionBar">
+        <!--<item name="android:windowBackground">@color/colorPrimaryDark</item>-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
+        <!--<item name="android:windowBackground">@drawable/launcher_screen</item>-->
+    </style>
+
+    <style name="SplashScreen" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/activity_splash</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <!-- The launcher theme. It sets the main window background to the launch_screen drawable -->
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/launcher_screen</item>
+        <!-- Optional, on Android 5+ you can modify the colorPrimaryDark color to match the windowBackground color for further branding-->
+         <item name="colorPrimaryDark">@android:color/black</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeSettings" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+        <!--<item name="android:statusBarColor">@color/colorPrimaryDark</item>-->
+    </style>
+
+    <style name="SettingsFragmentStyle">
+        <item name="android:textColorPrimary">#FF000000</item>
+        <item name="android:textColorSecondary">#FF000000</item>
+        <item name="android:textColorTertiary">#FF000000</item>
+        <item name="android:textColor">#FF000000</item>
+        <item name="android:listDivider">@color/black</item>
+        <item name="android:background">#FFFFFFFF</item>
+        <item name="textColorAlertDialogListItem">@color/black</item>
+    </style>
+
+    <style name="SettingsFragmentStyleDark">
+        <item name="android:textColorPrimary">#FFFFFFFF</item>
+        <item name="android:textColorSecondary">#FFFFFFFF</item>
+        <item name="android:textColorTertiary">#FFFFFFFF</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:listDivider">@color/white</item>
+        <item name="android:divider">@color/white</item>
+        <item name="android:background">#4d4d4d</item>
+        <item name="textColorAlertDialogListItem">#FFFFFFFF</item>
+        <!--<item name="android:windowBackground">#4d4d4d</item>-->
+    </style>
+
+    <style name="SettingsFragmentStyleAmoled">
+        <item name="android:textColorPrimary">#FFFFFFFF</item>
+        <item name="android:textColorSecondary">#FFFFFFFF</item>
+        <item name="android:textColorTertiary">#FFFFFFFF</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:listDivider">@color/white</item>
+        <item name="android:divider">@color/white</item>
+        <item name="android:background">@color/black</item>
+        <item name="textColorAlertDialogListItem">#FFFFFFFF</item>
+        <!--<item name="android:windowBackground">#4d4d4d</item>-->
+    </style>
+
+
+
+</resources>

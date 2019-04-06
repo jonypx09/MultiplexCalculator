@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listentries">
+        <item>Basic Calculator</item>
+        <item>Scientific Calculator</item>
+        <item>Length Converter</item>
+        <item>Weight and Mass Converter</item>
+        <item>Volume Converter</item>
+        <item>Area Converter</item>
+        <item>Temperature Converter</item>
+        <item>Pressure Converter</item>
+        <item>Speed Converter</item>
+        <item>Power Converter</item>
+        <item>Fuel Consumption Converter</item>
+    </string-array>
+    <string-array name="listvalues">
+        <item>Basic Calculator</item>
+        <item>Scientific Calculator</item>
+        <item>Length Converter</item>
+        <item>Weight Converter</item>
+        <item>Volume Converter</item>
+        <item>Area Converter</item>
+        <item>Temperature Converter</item>
+        <item>Pressure Converter</item>
+        <item>Speed Converter</item>
+        <item>Power Converter</item>
+        <item>Fuel Consumption Converter</item>
+    </string-array>
+</resources>

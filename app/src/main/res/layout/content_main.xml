@@ -1,0 +1,4003 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <!--Each layout represents a type of function, accessible through a fragment-->
+
+    <LinearLayout
+        android:id="@+id/basicCalView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/bcDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:fontFamily="@font/roboto"
+            android:maxLines="1"
+
+            android:minLines="1"
+            android:paddingStart="18dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="36dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/black"
+            android:textIsSelectable="true"
+            android:textSize="100sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TableLayout
+            android:id="@+id/bcButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/bcPercentButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="percentEval"
+                    android:text="@string/percent"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/bcRootButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="squareRootEval"
+                    android:text="@string/root"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/bcSquaredButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="squaredEval"
+                    android:text="@string/squared"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/bcReciprocolButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="inverseX"
+                    android:text="@string/recipricol"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/bcClearEntryButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="clearEntry"
+                    android:text="@string/clearEntry"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/bcCancelButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="cancelEverything"
+                    android:text="@string/cancel"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/bcDeleteButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="deleteDigit"
+                    android:text="@string/delete"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/bcDivideButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertDivide"
+                    android:text="@string/divide"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/bcSevenButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSeven"
+                    android:text="@string/seven"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/bcEightButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertEight"
+                    android:text="@string/eight"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/bcNineButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertNine"
+                    android:text="@string/nine"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/bcMultiplyButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertTimes"
+                    android:text="@string/multiply"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/bcFourButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFour"
+                    android:text="@string/four"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/bcFiveButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFive"
+                    android:text="@string/five"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/bcSixButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSix"
+                    android:text="@string/six"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/bcMinusButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertMinus"
+                    android:text="@string/subtract"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/bcOneButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertOne"
+                    android:text="@string/one"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/bcTwoButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertTwo"
+                    android:text="@string/two"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/bcThreeButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertThree"
+                    android:text="@string/three"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/bcPlusButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertPlus"
+                    android:text="@string/add"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/bcPosNegButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="changeSign"
+                    android:text="@string/PosNeg"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/bcZeroButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertZero"
+                    android:text="@string/zero"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/bcPeriodButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertPeriod"
+                    android:text="@string/period"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/bcEqualsButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:hapticFeedbackEnabled="true"
+                    android:onClick="evaluateEntry"
+                    android:text="@string/equals"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/scientificCalView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:visibility="invisible">
+
+        <TextView
+            android:id="@+id/scDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingStart="10dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="36dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="70sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TableLayout
+            android:id="@+id/scButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <ToggleButton
+                    android:id="@+id/scToggle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="changeButtonFunctions"
+                    android:text="@string/moreOptions"
+                    android:textOff="▲"
+                    android:textOn="▲"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/scExp10Button"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="tenExponent"
+                    android:text="@string/tenPower"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scSinButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="sinFunction"
+                    android:text="@string/sin"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scCosButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="cosFunction"
+                    android:text="@string/cos"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scTanButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="tanFunction"
+                    android:text="@string/tan"
+                    android:textSize="18sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/scSquaredButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="monospace"
+                    android:onClick="squaredEvalSc"
+                    android:text="@string/squared"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/scCustomExponentButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="customExponent"
+                    android:text="@string/XY"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/scLogButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="logFunction"
+                    android:text="@string/log"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/scModButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="modFunction"
+                    android:text="@string/mod"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/scDegButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="degFunction"
+                    android:text="@string/DEG"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/scSquareRootButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="squareRootEvalSc"
+                    android:text="@string/root"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scClearEntryButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="clearEntrySc"
+                    android:text="@string/clearEntry"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scCancelButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="cancelEverythingSc"
+                    android:text="@string/cancel"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scDeleteButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="deleteDigitSc"
+                    android:text="@string/delete"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scDivideButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertDivideSc"
+                    android:text="@string/divide"
+                    android:textSize="18sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/scPiButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertPi"
+                    android:text="@string/pi"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/scSevenButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertSevenSc"
+                    android:text="@string/seven"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/scEightButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertEightSc"
+                    android:text="@string/eight"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/scNineButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertNineSc"
+                    android:text="@string/nine"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/scMultiplyButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertTimesSc"
+                    android:text="@string/multiply"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/scFactorialButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="factorialEval"
+                    android:text="@string/nFactorial"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/scFourButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertFourSc"
+                    android:text="@string/four"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/scFiveButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertFiveSc"
+                    android:text="@string/five"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/scSixButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertSixSc"
+                    android:text="@string/six"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/scMinusButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertMinusSc"
+                    android:text="@string/subtract"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/scPosNegButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="changeSignSc"
+                    android:text="@string/PosNeg"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scOneButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertOneSc"
+                    android:text="@string/one"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scTwoButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertTwoSc"
+                    android:text="@string/two"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scThreeButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertThreeSc"
+                    android:text="@string/three"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scPlusButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertPlusSc"
+                    android:text="@string/add"
+                    android:textSize="18sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/scLeftBracketButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertLeftBracket"
+                    android:text="@string/leftBracket"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scRightBracketButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertRightBracket"
+                    android:text="@string/rightBracket"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scZeroButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertZeroSc"
+                    android:text="@string/zero"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scPeriodButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertPeriodSc"
+                    android:text="@string/period"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/scEqualsButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="evaluateEntrySc"
+                    android:text="@string/equals"
+                    android:textSize="18sp" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/currencyView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/currencyTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/currencyOptionsIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/currencyConvert"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/currencyTextOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/currencyOptionsOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/currencyConvert"
+            android:textAlignment="textEnd" />
+
+        <LinearLayout
+            android:id="@+id/currencyWhiteSpace"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"></LinearLayout>
+
+        <TableLayout
+            android:id="@+id/ccButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/ccClearEntryButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="clearEntry"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/ccCancelButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="cancelEverythingCc"
+                    android:text="@string/cancel"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/ccDeleteButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="deleteDigitCc"
+                    android:text="@string/delete"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/ccSevenButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSevenCc"
+                    android:text="@string/seven"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/ccEightButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertEightCc"
+                    android:text="@string/eight"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/ccNineButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertNineCc"
+                    android:text="@string/nine"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/ccFourButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFourCc"
+                    android:text="@string/four"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/ccFiveButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFiveCc"
+                    android:text="@string/five"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/ccSixButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSixCc"
+                    android:text="@string/six"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/ccOneButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertOneCc"
+                    android:text="@string/one"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/ccTwoButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertTwoCc"
+                    android:text="@string/two"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/ccThreeButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertThreeCc"
+                    android:text="@string/three"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/ccPosNegButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:onClick="changeSign"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/ccZeroButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertZeroCc"
+                    android:text="@string/zero"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/ccPeriodButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertPeriodCc"
+                    android:text="@string/period"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lengthView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/lengthTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="false"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:scrollHorizontally="false"
+            android:singleLine="false"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/lengthOptionsIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/lengthConvert"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/lengthTextOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeMinTextSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/lengthOptionsOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/lengthConvert"
+            android:textAlignment="textEnd" />
+
+        <LinearLayout
+            android:id="@+id/lengthWhiteSpace"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"></LinearLayout>
+
+        <TableLayout
+            android:id="@+id/lcButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/lcClearEntryButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/lcCancelButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="cancelEverythinglc"
+                    android:text="@string/cancel"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/lcDeleteButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="deleteDigitlc"
+                    android:text="@string/delete"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/lcSevenButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSevenlc"
+                    android:text="@string/seven"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/lcEightButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertEightlc"
+                    android:text="@string/eight"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/lcNineButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertNinelc"
+                    android:text="@string/nine"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/lcFourButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFourlc"
+                    android:text="@string/four"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/lcFiveButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFivelc"
+                    android:text="@string/five"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/lcSixButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSixlc"
+                    android:text="@string/six"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/lcOneButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertOnelc"
+                    android:text="@string/one"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/lcTwoButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertTwolc"
+                    android:text="@string/two"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/lcThreeButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertThreelc"
+                    android:text="@string/three"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/lcPosNegButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:onClick="changeSign"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/lcZeroButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertZerolc"
+                    android:text="@string/zero"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/lcPeriodButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertPeriodlc"
+                    android:text="@string/period"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/weightView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/weightTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/weightOptionsIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/weightConvert"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/weightTextOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/weightOptionsOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/weightConvert"
+            android:textAlignment="textEnd" />
+
+        <LinearLayout
+            android:id="@+id/weightWhiteSpace"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"></LinearLayout>
+
+        <TableLayout
+            android:id="@+id/wcButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/wcClearEntryButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/wcCancelButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="cancelEverythingwc"
+                    android:text="@string/cancel"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/wcDeleteButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="deleteDigitwc"
+                    android:text="@string/delete"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/wcSevenButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSevenwc"
+                    android:text="@string/seven"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/wcEightButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertEightwc"
+                    android:text="@string/eight"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/wcNineButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertNinewc"
+                    android:text="@string/nine"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/wcFourButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFourwc"
+                    android:text="@string/four"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/wcFiveButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFivewc"
+                    android:text="@string/five"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/wcSixButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSixwc"
+                    android:text="@string/six"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/wcOneButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertOnewc"
+                    android:text="@string/one"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/wcTwoButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertTwowc"
+                    android:text="@string/two"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/wcThreeButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertThreewc"
+                    android:text="@string/three"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/wcPosNegButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:onClick="changeSign"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/wcZeroButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertZerowc"
+                    android:text="@string/zero"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/wcPeriodButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertPeriodwc"
+                    android:text="@string/period"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/volumeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/volumeTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/volumeOptionsIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/volumeConvert"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/volumeTextOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/volumeOptionsOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/volumeConvert"
+            android:textAlignment="textEnd" />
+
+        <LinearLayout
+            android:id="@+id/volumeWhiteSpace"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"></LinearLayout>
+
+        <TableLayout
+            android:id="@+id/vcButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/vcClearEntryButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/vcCancelButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="cancelEverythingvc"
+                    android:text="@string/cancel"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/vcDeleteButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="deleteDigitvc"
+                    android:text="@string/delete"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/vcSevenButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSevenvc"
+                    android:text="@string/seven"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/vcEightButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertEightvc"
+                    android:text="@string/eight"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/vcNineButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertNinevc"
+                    android:text="@string/nine"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/vcFourButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFourvc"
+                    android:text="@string/four"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/vcFiveButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFivevc"
+                    android:text="@string/five"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/vcSixButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSixvc"
+                    android:text="@string/six"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/vcOneButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertOnevc"
+                    android:text="@string/one"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/vcTwoButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertTwovc"
+                    android:text="@string/two"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/vcThreeButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertThreevc"
+                    android:text="@string/three"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/vcPosNegButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/vcZeroButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertZerovc"
+                    android:text="@string/zero"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/vcPeriodButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertPeriodvc"
+                    android:text="@string/period"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/areaView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/areaTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/areaOptionsIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/areaConvert"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/areaTextOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/areaOptionsOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/areaConvert"
+            android:textAlignment="textEnd" />
+
+        <LinearLayout
+            android:id="@+id/areaWhiteSpace"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"></LinearLayout>
+
+        <TableLayout
+            android:id="@+id/acButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/acClearEntryButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/acCancelButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="cancelEverythingac"
+                    android:text="@string/cancel"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/acDeleteButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="deleteDigitac"
+                    android:text="@string/delete"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/acSevenButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSevenac"
+                    android:text="@string/seven"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/acEightButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertEightac"
+                    android:text="@string/eight"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/acNineButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertNineac"
+                    android:text="@string/nine"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/acFourButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFourac"
+                    android:text="@string/four"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/acFiveButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFiveac"
+                    android:text="@string/five"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/acSixButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSixac"
+                    android:text="@string/six"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/acOneButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertOneac"
+                    android:text="@string/one"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/acTwoButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertTwoac"
+                    android:text="@string/two"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/acThreeButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertThreeac"
+                    android:text="@string/three"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/acPosNegButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/acZeroButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertZeroac"
+                    android:text="@string/zero"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/acPeriodButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertPeriodac"
+                    android:text="@string/period"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/temperatureView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/tempTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/tempOptionsIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/tempConvert"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/tempTextOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/tempOptionsOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/tempConvert"
+            android:textAlignment="textEnd" />
+
+        <LinearLayout
+            android:id="@+id/tempWhiteSpace"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"></LinearLayout>
+
+        <TableLayout
+            android:id="@+id/tcButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/tcClearEntryButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/tcCancelButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="cancelEverythingtc"
+                    android:text="@string/cancel"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/tcDeleteButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="deleteDigittc"
+                    android:text="@string/delete"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/tcSevenButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSeventc"
+                    android:text="@string/seven"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/tcEightButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertEighttc"
+                    android:text="@string/eight"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/tcNineButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertNinetc"
+                    android:text="@string/nine"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/tcFourButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFourtc"
+                    android:text="@string/four"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/tcFiveButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFivetc"
+                    android:text="@string/five"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/tcSixButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSixtc"
+                    android:text="@string/six"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/tcOneButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertOnetc"
+                    android:text="@string/one"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/tcTwoButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertTwotc"
+                    android:text="@string/two"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/tcThreeButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertThreetc"
+                    android:text="@string/three"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/tcPosNegButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/tcZeroButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertZerotc"
+                    android:text="@string/zero"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/tcPeriodButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertPeriodtc"
+                    android:text="@string/period"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pressureView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/pressureTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/pressureOptionsIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/pressureConvert"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/pressureTextOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/pressureOptionsOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/pressureConvert"
+            android:textAlignment="textEnd" />
+
+        <LinearLayout
+            android:id="@+id/pressureWhiteSpace"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"></LinearLayout>
+
+        <TableLayout
+            android:id="@+id/pcButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/pcClearEntryButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/pcCancelButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="cancelEverythingpc"
+                    android:text="@string/cancel"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/pcDeleteButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="deleteDigitpc"
+                    android:text="@string/delete"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/pcSevenButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSevenpc"
+                    android:text="@string/seven"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/pcEightButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertEightpc"
+                    android:text="@string/eight"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/pcNineButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertNinepc"
+                    android:text="@string/nine"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/pcFourButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFourpc"
+                    android:text="@string/four"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/pcFiveButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFivepc"
+                    android:text="@string/five"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/pcSixButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSixpc"
+                    android:text="@string/six"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/pcOneButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertOnepc"
+                    android:text="@string/one"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/pcTwoButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertTwopc"
+                    android:text="@string/two"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/pcThreeButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertThreepc"
+                    android:text="@string/three"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/pcPosNegButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/pcZeroButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertZeropc"
+                    android:text="@string/zero"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/pcPeriodButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertPeriodpc"
+                    android:text="@string/period"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/speedView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/speedTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/speedOptionsIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/speedConvert"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/speedTextOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/speedOptionsOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/speedConvert"
+            android:textAlignment="textEnd" />
+
+        <LinearLayout
+            android:id="@+id/speedWhiteSpace"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"></LinearLayout>
+
+        <TableLayout
+            android:id="@+id/spcButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/spcClearEntryButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/spcCancelButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="cancelEverythingspc"
+                    android:text="@string/cancel"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/spcDeleteButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="deleteDigitspc"
+                    android:text="@string/delete"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/spcSevenButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSevenspc"
+                    android:text="@string/seven"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/spcEightButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertEightspc"
+                    android:text="@string/eight"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/spcNineButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertNinespc"
+                    android:text="@string/nine"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/spcFourButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFourspc"
+                    android:text="@string/four"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/spcFiveButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFivespc"
+                    android:text="@string/five"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/spcSixButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSixspc"
+                    android:text="@string/six"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/spcOneButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertOnespc"
+                    android:text="@string/one"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/spcTwoButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertTwospc"
+                    android:text="@string/two"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/spcThreeButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertThreespc"
+                    android:text="@string/three"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/spcPosNegButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/spcZeroButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertZerospc"
+                    android:text="@string/zero"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/spcPeriodButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertPeriodspc"
+                    android:text="@string/period"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/powerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/powerTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/powerOptionsIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/powerConvert"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/powerTextOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/powerOptionsOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/powerConvert"
+            android:textAlignment="textEnd" />
+
+        <LinearLayout
+            android:id="@+id/powerWhiteSpace"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"></LinearLayout>
+
+        <TableLayout
+            android:id="@+id/pocButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/pocClearEntryButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/pocCancelButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="cancelEverythingpoc"
+                    android:text="@string/cancel"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/pocDeleteButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="deleteDigitpoc"
+                    android:text="@string/delete"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/pocSevenButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSevenpoc"
+                    android:text="@string/seven"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/pocEightButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertEightpoc"
+                    android:text="@string/eight"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/pocNineButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertNinepoc"
+                    android:text="@string/nine"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/pocFourButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFourpoc"
+                    android:text="@string/four"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/pocFiveButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFivepoc"
+                    android:text="@string/five"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/pocSixButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSixpoc"
+                    android:text="@string/six"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/pocOneButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertOnepoc"
+                    android:text="@string/one"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/pocTwoButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertTwopoc"
+                    android:text="@string/two"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/pocThreeButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertThreepoc"
+                    android:text="@string/three"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/pocPosNegButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/pocZeroButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertZeropoc"
+                    android:text="@string/zero"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/pocPeriodButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertPeriodpoc"
+                    android:text="@string/period"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fuelView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/fuelTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/fuelOptionsIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/fuelConvert"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/fuelTextOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/zero"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            app:autoSizeTextType="uniform" />
+
+        <Spinner
+            android:id="@+id/fuelOptionsOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/fuelConvert"
+            android:textAlignment="textEnd" />
+
+        <LinearLayout
+            android:id="@+id/fuelWhiteSpace"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"></LinearLayout>
+
+        <TableLayout
+            android:id="@+id/fccButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/fccClearEntryButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/fccCancelButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="cancelEverythingfcc"
+                    android:text="@string/cancel"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/fccDeleteButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="deleteDigitfcc"
+                    android:text="@string/delete"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/fccSevenButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSevenfcc"
+                    android:text="@string/seven"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/fccEightButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertEightfcc"
+                    android:text="@string/eight"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/fccNineButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertNinefcc"
+                    android:text="@string/nine"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/fccFourButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFourfcc"
+                    android:text="@string/four"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/fccFiveButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertFivefcc"
+                    android:text="@string/five"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/fccSixButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertSixfcc"
+                    android:text="@string/six"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/fccOneButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertOnefcc"
+                    android:text="@string/one"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/fccTwoButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertTwofcc"
+                    android:text="@string/two"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/fccThreeButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="insertThreefcc"
+                    android:text="@string/three"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/fccPosNegButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/fccZeroButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertZerofcc"
+                    android:text="@string/zero"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/fccPeriodButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="insertPeriodfcc"
+                    android:text="@string/period"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

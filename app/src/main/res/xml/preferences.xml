@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Customize Appearance">
+        <!--android:layout="@layout/preferences_category">-->
+        <android.support.v7.preference.SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="dark_mode_switch"
+            android:summary="@string/dark_mode_switch_summary"
+            android:title="@string/dark_mode_switch_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="amoled_mode_switch"
+            android:summary="@string/amoled_mode_switch_summary"
+            android:title="@string/amoled_mode_switch_title"
+            android:dependency="dark_mode_switch"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Customize Favourites">
+        <!--android:layout="@layout/preferences_category">-->
+        <ListPreference
+            android:key="fav_shortcut1"
+            android:defaultValue="Basic Calculator"
+            android:title="Shortcut 1"
+            android:summary="%s"
+            android:entries="@array/listentries"
+            android:entryValues="@array/listvalues" />
+        <ListPreference
+            android:key="fav_shortcut2"
+            android:defaultValue="Scientific Calculator"
+            android:title="Shortcut 2"
+            android:summary="%s"
+            android:entries="@array/listentries"
+            android:entryValues="@array/listvalues" />
+        <ListPreference
+            android:key="fav_shortcut3"
+            android:defaultValue="Length Converter"
+            android:title="Shortcut 3"
+            android:summary="%s"
+            android:entries="@array/listentries"
+            android:entryValues="@array/listvalues" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Support">
+        <!--android:layout="@layout/preferences_category">-->
+        <Preference
+            android:key="user_feedback"
+            android:title="Report an Issue">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="mailto:jpxsoftware@gmail.com?subject= Multiplex Calculator Feedback" />
+        </Preference>
+        <!--<Preference-->
+            <!--android:key="user_help"-->
+            <!--android:title="FAQ &amp; Help">-->
+            <!--<intent android:targetPackage="com.jonypx09.multiplexcalculator"-->
+                <!--android:targetClass="com.jonypx09.multiplexcalculator.HelpActivity"/>-->
+        <!--</Preference>-->
+        <Preference
+            android:key="app_info"
+            android:title="About version 1.3"
+            android:summary="Privacy Policy, Disclaimer, Credits...">
+            <intent android:targetPackage="com.jonypx09.multiplexcalculator"
+                android:targetClass="com.jonypx09.multiplexcalculator.AboutActivity"/>
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

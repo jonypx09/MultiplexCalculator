@@ -1,0 +1,198 @@
+<resources>
+    <string name="app_name">Multiplex Calculator</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <string name="dark_mode_switch_title">Dark Mode</string>
+    <string name="dark_mode_switch_summary">Recommended during night hours</string>
+
+    <string name="amoled_mode_switch_title">Enable AMOLED Dark Mode</string>
+    <string name="amoled_mode_switch_summary">Uses Less Energy for devices with AMOLED displays</string>
+
+
+    <!-- Strings related to Button Labels -->
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="equals">=</string>
+    <string name="period">.</string>
+    <string name="PosNeg">±</string>
+
+    <string name="percent">%</string>
+    <string name="root">√</string>
+    <string name="squared">x²</string>
+    <string name="recipricol">1/x</string>
+    <string name="clearEntry">CE</string>
+    <string name="cancel">C</string>
+    <string name="delete">DEL</string>
+
+    <string name="add">+</string>
+    <string name="subtract">-</string>
+    <string name="multiply">x</string>
+    <string name="divide">÷</string>
+
+    <string name="moreOptions">moreOptions</string>
+
+    <string name="tenPower">10^x</string>
+    <string name="sin">sin</string>
+    <string name="cos">cos</string>
+    <string name="tan">tan</string>
+    <string name="log">log</string>
+    <string name="ln">ln</string>
+    <string name="mod">mod</string>
+    <string name="XY">XY</string>
+    <string name="DEG">DEG</string>
+    <string name="pi">PI</string>
+    <string name="nFactorial">n!</string>
+
+    <string name="leftBracket">(</string>
+    <string name="rightBracket">)</string>
+
+
+    <!--Conversion Types -->
+    <string-array name="currencyConvert">
+        <item>Afghanistan - Afghani</item>
+        <item>Albania - Lek</item>
+        <item>Algeria - Dinar</item>
+        <item>Argentina - Peso</item>
+        <item>Aruba - Guilder</item>
+        <item>Australia - Dollar</item>
+        <item>Azerbaijan - New Manat</item>
+        <item>The Bahamas - Dollar</item>
+        <item>Bahrain - Dinar</item>
+        <item>Bangladesh - Taka</item>
+        <item>Barbados - Dollar</item>
+        <item>Belize - Dollar</item>
+        <item>Bermuda - Dollar</item>
+        <item>Bitcoin</item>
+        <item>Bolivia - Boliviano</item>
+        <item>Bonsnia and Herzegovina - Convertible Marka</item>
+        <item>Botswana - Pula</item>
+        <item>Brazil - Real</item>
+        <item>Brunei - Dollar</item>
+
+        <!--<item> Add the rest here </item>-->
+    </string-array>
+
+    <string-array name="lengthConvert">
+        <item>Centimetres</item>
+        <item>Feet</item>
+        <item>Inches</item>
+        <item>Kilometres</item>
+        <item>Metres</item>
+        <item>Microns</item>
+        <item>Millimetres</item>
+        <item>Miles</item>
+        <item>Nautical Miles</item>
+        <item>Nanometres</item>
+        <item>Yards</item>
+    </string-array>
+
+    <string-array name="weightConvert">
+        <item>Carats</item>
+        <item>Centigrams</item>
+        <item>Decagrams</item>
+        <item>Decigrams</item>
+        <item>Grams</item>
+        <item>Hectograms</item>
+        <item>Kilograms</item>
+        <item>Long Tones (UK)</item>
+        <item>Metric Tonnes</item>
+        <item>Milligrams</item>
+        <item>Ounces</item>
+        <item>Pounds</item>
+        <item>Short Tonnes (US)</item>
+        <item>Stone</item>
+    </string-array>
+
+    <string-array name="volumeConvert">
+        <item>Cubic Centimetres</item>
+        <item>Cubic Feet</item>
+        <item>Cubic Inches</item>
+        <item>Cubic Metres</item>
+        <item>Cubic Yards</item>
+        <item>Cups (US)</item>
+        <item>Fluid Ounces (US)</item>
+        <item>Fluid Ounces (UK)</item>
+        <item>Gallons (US)</item>
+        <item>Gallons (UK)</item>
+        <item>Litres</item>
+        <item>Millilitres</item>
+        <item>Pints (US)</item>
+        <item>Pints (UK)</item>
+        <item>Quarts (US)</item>
+        <item>Quarts (UK)</item>
+        <item>Tablespoons (US)</item>
+        <item>Teaspoons US)</item>
+        <item>Tablespoons (UK)</item>
+        <item>Teaspoons UK)</item>
+    </string-array>
+
+    <string-array name="areaConvert">
+        <item>Acres</item>
+        <item>Hectares</item>
+        <item>Square Centimetres</item>
+        <item>Square Feet</item>
+        <item>Square Inches</item>
+        <item>Square Kilometres</item>
+        <item>Square Miles</item>
+        <item>Square Metres</item>
+        <item>Square Millimetres</item>
+        <item>Square Yards</item>
+    </string-array>
+
+    <string-array name="tempConvert">
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
+    </string-array>
+
+    <string-array name="pressureConvert">
+        <item>Atmospheres</item>
+        <item>Bars</item>
+        <item>Kilopascals</item>
+        <item>Pascals</item>
+        <item>Pounds per Square Inch</item>
+    </string-array>
+
+    <string-array name="speedConvert">
+        <item>Centimetres per second</item>
+        <item>Feet per second</item>
+        <item>Kilometres per hour</item>
+        <item>Knots</item>
+        <item>Mach</item>
+        <item>Metres per second</item>
+        <item>Miles per hour</item>
+    </string-array>
+
+    <string-array name="powerConvert">
+        <item>British Thermal Units (BTUs) per minute</item>
+        <item>Foot-Pounds per minute</item>
+        <item>Horsepower (US)</item>
+        <item>Kilowatts</item>
+        <item>Watts</item>
+    </string-array>
+
+    <string-array name="fuelConvert">
+        <item>Miles per Gallon (US)</item>
+        <item>Miles per Gallon (UK)</item>
+        <item>Litres per 100km</item>
+        <item>Gallon (US) per Mile</item>
+        <item>Gallon (UK) per Mile</item>
+    </string-array>
+
+</resources>
